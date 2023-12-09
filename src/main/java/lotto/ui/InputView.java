@@ -46,6 +46,6 @@ public class InputView {
         System.out.println(BONUS_NUMBER_REQUEST_MESSAGE);
         String bonusNumber = Console.readLine();
 
-        return new BonusNumber();
+        return new BonusNumber(Converter.convertBonusNumber(bonusNumber));
     }
 }

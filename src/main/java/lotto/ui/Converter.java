@@ -1,5 +1,6 @@
 package lotto.ui;
 
+import static lotto.BonusNumber.BONUS_NUMBER_RE_REQUEST_MESSAGE;
 import static lotto.Lotto.LOTTO_NUMBER_RE_REQUEST_MESSAGE;
 import static lotto.PurchaseMoney.PURCHASE_MONEY_RE_REQUEST_MESSAGE;
 
@@ -37,5 +38,13 @@ public class Converter {
     private static List<String> separateWinningLottoNumber(String winningLottoNumber) {
         String[] separatedWinningLottoNumber = winningLottoNumber.split(LOTTO_NUMBER_DELIMITER);
         return new ArrayList<>(Arrays.asList(separatedWinningLottoNumber));
+    }
+
+    public static int convertBonusNumber(String bonusNumber) {
+        try {
+            return Integer.parseInt(bonusNumber);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException(BONUS_NUMBER_RE_REQUEST_MESSAGE);
+        }
     }
 }
