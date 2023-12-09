@@ -10,6 +10,6 @@ public class InputView {
         System.out.println(PURCHASE_MONEY_REQUEST_MESSAGE);
         String purchaseMoney = Console.readLine();
 
-        return
+        return new PurchaseMoney(Converter.convertPurchaseMoney(purchaseMoney));
     }
 }
