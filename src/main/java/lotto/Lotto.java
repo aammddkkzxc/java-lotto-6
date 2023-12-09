@@ -33,4 +33,8 @@ public class Lotto {
             }
         }
     }
+
+    public boolean isContainNumber(int number) {
+        return numbers.contains(number);
+    }
 }

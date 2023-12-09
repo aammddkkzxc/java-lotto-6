@@ -4,6 +4,7 @@ import camp.nextstep.edu.missionutils.Console;
 import lotto.BonusNumber;
 import lotto.Lotto;
 import lotto.PurchaseMoney;
+import lotto.WinningLotto;
 
 public class InputView {
     private static final String PURCHASE_MONEY_REQUEST_MESSAGE = "구입금액을 입력해 주세요.";
@@ -40,6 +41,15 @@ public class InputView {
         String winningLottoNumber = Console.readLine();
 
         return new Lotto(Converter.convertWinningLottoNumber(winningLottoNumber));
+    }
+
+    public static WinningLotto inputWinningLotto(Lotto lotto) {
+        try {
+            return new WinningLotto(lotto, readBonusNumber());
+        }catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return inputWinningLotto(lotto);
+        }
     }
 
     private static BonusNumber readBonusNumber() {

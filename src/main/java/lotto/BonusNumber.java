@@ -8,6 +8,7 @@ public class BonusNumber {
     private final int number;
 
     public BonusNumber(int number) {
+        validateBonusNumberRange(number);
         this.number = number;
     }
 
