@@ -28,6 +28,6 @@ public class InputView {
         System.out.println(WINNING_NUMBER_REQUEST_MESSAGE);
         String winningLottoNumber = Console.readLine();
 
-        return
+        return new Lotto(Converter.convertWinningLottoNumber(winningLottoNumber));
     }
 }
