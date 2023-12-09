@@ -27,6 +27,10 @@ public class PurchaseMoney {
         }
     }
 
+    public int calculateTicketsNumber() {
+        return amount / LOTTO_PRICE;
+    }
+
     public int getAmount() {
         return amount;
     }

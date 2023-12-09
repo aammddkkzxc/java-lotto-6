@@ -37,4 +37,16 @@ public class Lotto {
     public boolean isContainNumber(int number) {
         return numbers.contains(number);
     }
+
+    public int countDuplicationWinningNumbers(Lotto other) {
+        Set<Integer> duplicationChecker = new HashSet<>();
+        duplicationChecker.addAll(numbers);
+        duplicationChecker.addAll(other.getNumbers());
+
+        return numbers.size() * 2 - duplicationChecker.size();
+    }
+
+    public List<Integer> getNumbers() {
+        return numbers;
+    }
 }
