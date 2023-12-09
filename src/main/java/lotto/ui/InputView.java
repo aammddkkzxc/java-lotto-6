@@ -24,7 +24,16 @@ public class InputView {
         return new PurchaseMoney(Converter.convertPurchaseMoney(purchaseMoney));
     }
 
-    private static Lotto inputWinningLottoNumber() {
+    public static Lotto inputWinningLottoNumber() {
+        try {
+            return readWinningLottoNumber();
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return inputWinningLottoNumber();
+        }
+    }
+
+    private static Lotto readWinningLottoNumber() {
         System.out.println(WINNING_NUMBER_REQUEST_MESSAGE);
         String winningLottoNumber = Console.readLine();
 
