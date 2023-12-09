@@ -1,12 +1,14 @@
 package lotto.ui;
 
 import camp.nextstep.edu.missionutils.Console;
+import lotto.BonusNumber;
 import lotto.Lotto;
 import lotto.PurchaseMoney;
 
 public class InputView {
     private static final String PURCHASE_MONEY_REQUEST_MESSAGE = "구입금액을 입력해 주세요.";
     private static final String WINNING_NUMBER_REQUEST_MESSAGE = "당첨 번호를 입력해 주세요.";
+    private static final String BONUS_NUMBER_REQUEST_MESSAGE = "보너스 번호를 입력해 주세요.";
 
     public static PurchaseMoney inputPurchaseMoney() {
         try {
@@ -38,5 +40,12 @@ public class InputView {
         String winningLottoNumber = Console.readLine();
 
         return new Lotto(Converter.convertWinningLottoNumber(winningLottoNumber));
+    }
+
+    private static BonusNumber readBonusNumber() {
+        System.out.println(BONUS_NUMBER_REQUEST_MESSAGE);
+        String bonusNumber = Console.readLine();
+
+        return new BonusNumber();
     }
 }
